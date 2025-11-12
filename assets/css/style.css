@@ -107,29 +107,148 @@ p {
 .section_top_space { padding-top: 30px; }
 .section_bg { background-color: var(--sectionBackground); }
 
-/*----------------------
-    Section Heading
-----------------------*/
-.section_title {
-    position: relative;
-    margin-bottom: 40px;
+/*==============================
+  Common Section Title
+==============================*/
+.section-title h2 {
+  color: #0a6847;
+  font-family: "Noto Sans Bengali", sans-serif;
 }
 
-.section_title h2 {
-    font-size: 2.5rem; /* 40px */
-    text-transform: uppercase;
-    color: var(--black);
-    font-weight: 500;
-    margin: 0;
-    line-height: 1.1;
+.section-title p {
+  color: #555;
+  font-family: "Noto Sans Bengali", sans-serif;
 }
 
+/*==============================
+  FAQ Section Styles
+==============================*/
+.faq-section {
+  background: #f9fafb;
+  font-family: "Noto Sans Bengali", sans-serif;
+}
 
+.faq-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 
-/*-----------------------------
-    Header Area CSS Start
------------------------------*/
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
+.faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 18px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #0a6847;
+}
+
+.faq-icon {
+  font-size: 18px;
+  color: #0a6847;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #f6fdf8;
+  color: #333;
+  padding: 0 20px;
+  transition: all 0.4s ease;
+}
+
+.faq-answer p {
+  margin: 15px 0;
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding-bottom: 15px;
+}
+
+.faq-item.active .faq-icon i {
+  transform: rotate(45deg);
+}
+
+/*==============================
+  Mission Section Styles
+==============================*/
+.mission-section {
+  background: #f9fafb;
+  font-family: "Noto Sans Bengali", sans-serif;
+}
+
+.mission-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.mission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.mission-icon {
+  font-size: 48px;
+  color: #0a6847;
+  margin-bottom: 15px;
+  transition: all 0.4s ease;
+}
+
+.mission-card:hover .mission-icon {
+  transform: scale(1.15);
+  color: #198754;
+}
+
+.mission-card h4 {
+  color: #0a6847;
+  margin-bottom: 12px;
+}
+
+.mission-card p {
+  color: #444;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.btn-learn {
+  background-color: #0a6847;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 50px;
+  padding: 10px 28px;
+  transition: all 0.3s ease;
+}
+
+.btn-learn:hover {
+  background-color: #198754;
+  transform: translateY(-2px);
+}
 
 
 
