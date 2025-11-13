@@ -1,3 +1,5 @@
+// ================= JAVASCRIPT ================//
+
 // FAQ Toggle Script
 document.querySelectorAll(".faq-question").forEach((button) => {
   button.addEventListener("click", () => {
@@ -18,3 +20,29 @@ document.querySelectorAll(".faq-question").forEach((button) => {
     icon.classList.toggle("bi-dash-lg");
   });
 });
+
+
+
+// ================= JQUERY ================//
+
+$(document).ready(function () {
+  $(".ongoing-carousel").owlCarousel({
+    loop: true,
+    margin: 25,
+    nav: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    navText: [
+      '<i class="bi bi-arrow-left-circle"></i>',
+      '<i class="bi bi-arrow-right-circle"></i>'
+    ],
+    responsive: {
+      0: { items: 1 },
+      768: { items: 2 },
+      992: { items: 3 }
+    }
+  });
+});
+
+
