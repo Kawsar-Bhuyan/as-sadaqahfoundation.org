@@ -9,7 +9,9 @@ document.querySelectorAll(".faq-question").forEach((button) => {
     document.querySelectorAll(".faq-item").forEach((item) => {
       if (item !== faqItem) {
         item.classList.remove("active");
-        item.querySelector(".faq-icon i").classList.replace("bi-dash-lg", "bi-plus-lg");
+        item
+          .querySelector(".faq-icon i")
+          .classList.replace("bi-dash-lg", "bi-plus-lg");
       }
     });
 
@@ -21,28 +23,60 @@ document.querySelectorAll(".faq-question").forEach((button) => {
   });
 });
 
-
-
 // ================= JQUERY ================//
 
 $(document).ready(function () {
+  // owlCarousel
   $(".ongoing-carousel").owlCarousel({
     loop: true,
     margin: 25,
     nav: true,
     autoplay: true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 5000,
     autoplayHoverPause: true,
     navText: [
-      '<i class="bi bi-arrow-left-circle"></i>',
-      '<i class="bi bi-arrow-right-circle"></i>'
+      '<i class="bi bi-chevron-left"></i>',
+      '<i class="bi bi-chevron-right"></i>',
     ],
     responsive: {
-      0: { items: 1 },
-      768: { items: 2 },
-      992: { items: 3 }
+      0: { items: 1, nav: false, dots: true },
+      768: { items: 2, nav: true, dots: false },
+      992: { items: 3, nav: true, dots: false },
+    },
+  });
+
+  // MagnificPopup
+  $('.popup-image').magnificPopup({
+    type: 'image',
+    gallery: {
+      enabled: true
+    },
+    image: {
+      titleSrc: function(item) {
+        return item.el.find('h5').text() + ' - ' + item.el.find('p').text();
+      }
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  $('a[href*="#"]').on('click', function(e) {
+    e.preventDefault();
+    
+    $('html, body').animate(
+      {
+        scrollTop: $($(this).attr('href')).offset().top - 80,
+      },
+      500,
+      'linear'
+    );
+  });
+  
+  // Header scroll effect
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 50) {
+      $('.header-section').addClass('scrolled');
+    } else {
+      $('.header-section').removeClass('scrolled');
     }
   });
 });
-
-
